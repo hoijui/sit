@@ -35,6 +35,8 @@ matrix:
       cargo deps for $TRAVIS_COMMIT" && git tag deps-`git rev-parse --short $TRAVIS_COMMIT`
       && git push && git push --tags)
   - nodejs: node
+    node_js:
+      - 7.6
     script:
       - cargo build
     before_deploy:
